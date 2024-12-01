@@ -1,0 +1,9 @@
+li{
+@apply my-3 text-gray-600
+}
+#tools li{
+    @apply text-balance text-xl
+}
+p{
+    @apply text-pretty 
+}

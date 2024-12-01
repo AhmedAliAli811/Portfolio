@@ -1,0 +1,112 @@
+<section class="flex flex-wrap justify-around mt-4">
+  <!-- Carousel Section -->
+  <div class="w-full md:w-6/12 p-3">
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+      <!-- Carousel Wrapper -->
+      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div
+          *ngFor="let item of img; let i = index"
+          class="hidden duration-700 ease-in-out"
+          data-carousel-item
+          [ngClass]="{ 'block': i === activeSlide, 'hidden': i !== activeSlide }"
+        >
+          <img
+            [src]="item"
+            alt="Carousel Image"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <button
+        type="button"
+        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        (click)="prevSlide()"
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white"
+        >
+          <svg
+            class="w-4 h-4 text-slate-600"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 1 1 5l4 4"
+            />
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        (click)="nextSlide()"
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white"
+        >
+          <svg
+            class="w-4 h-4 text-slate-600"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"
+            />
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Text Section -->
+  <div class="w-full md:w-6/12 flex flex-col items-start justify-around p-5">
+    <h1 class="text-3xl md:text-4xl font-bold">HR Dashboard Project</h1>
+    <p class="my-5 text-gray-600">
+      This project showcases an HR Analytics Dashboard created using Power BI to
+      visualize important HR metrics such as employee demographics, promotion
+      and layoff statuses, job levels, job satisfaction, and more. The goal was
+      to help HR teams make data-driven decisions with ease by leveraging
+      interactive and visually appealing data insights.
+    </p>
+    <a
+      href="https://github.com/AhmedAliAli811/HR_PowerBI_Dashboard"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-2 py-2 px-4 rounded"
+    >
+      View in GitHub <i class="fab fa-github"></i>
+    </a>
+  </div>
+
+  <!-- Key Features Section -->
+  <div class="w-full lg:w-11/12 mx-auto mt-7 p-3">
+    <h2 class="text-2xl">Key Features</h2>
+    <p class="text-gray-700">The dashboard provides HR teams with actionable insights to:</p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Track promotion readiness and layoff trends</li>
+      <li>Analyze employee job satisfaction and service years</li>
+      <li>Improve HR decision-making and policy adjustments</li>
+    </ul>
+  </div>
+
+  <!-- Tools Section -->
+  <div class="w-full lg:w-11/12 mx-auto mt-4 p-3">
+    <h2 class="text-2xl">Tools Used</h2>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Power BI</li>
+    </ul>
+  </div>
+</section>
